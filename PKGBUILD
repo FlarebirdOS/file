@@ -1,14 +1,18 @@
 pkgname=file
 pkgver=5.46
-pkgrel=1
+pkgrel=2
 pkgdesc="File type identification utility"
 arch=('x86_64')
 url="https://www.darwinsys.com/file/"
-license=('custom')
+license=(
+    'BSD-2-Clause-Darwin'
+    'BSD-2-Clause'
+)
 groups=('base' 'base-devel')
 depends=(
     'bzip2'
     'glibc'
+    'libseccomp'
     'xz'
     'zlib'
     'zstd'
@@ -21,6 +25,8 @@ build() {
     cd ${pkgname}-${pkgver}
 
     local configure_args=(
+        --enable-fsect-man5
+        --enable-libseccomp
         ${configure_options}
     )
 
