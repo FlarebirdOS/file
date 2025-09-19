@@ -1,10 +1,13 @@
 pkgname=file
 pkgver=5.46
-pkgrel=1
+pkgrel=2
 pkgdesc="File type identification utility"
 arch=('x86_64')
 url="https://www.darwinsys.com/file/"
-license=('custom')
+license=(
+    'BSD-2-Clause-Darwin'
+    'BSD-2-Clause'
+)
 groups=('base' 'base-devel')
 depends=(
     'bzip2'
